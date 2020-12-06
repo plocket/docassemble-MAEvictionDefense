@@ -1,4 +1,3 @@
-
 name: Test the interview
 
 on:
@@ -47,7 +46,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run setup
-      - run: npm run langs
+      - run: npm run test
       - name: upload error artifacts
         uses: actions/upload-artifact@v2
         if: ${{ failure() }}

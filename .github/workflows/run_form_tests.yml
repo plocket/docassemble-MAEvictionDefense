@@ -26,7 +26,7 @@ jobs:
       PLAYGROUND_EMAIL: ${{ secrets.PLAYGROUND_EMAIL }}
       PLAYGROUND_PASSWORD: ${{ secrets.PLAYGROUND_PASSWORD }}
       PLAYGROUND_ID: ${{ secrets.PLAYGROUND_ID }}
-      BASE_URL: interview_base_url
+      BASE_URL: https://interviews-dev.gbls.org
       BRANCH_PATH: ${{ github.ref }}
       EXTRA_LANGUAGES: ${{ secrets.EXTRA_LANGUAGES }}
 

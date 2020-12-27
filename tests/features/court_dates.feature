@@ -15,7 +15,7 @@ Since the tests are so long and many scenarios don't conflict, some have been co
 #Scenario: User's court date has passed
 #  Given I start the interview at "eviction"
 #  When the target question id is "not right interview"
-#  And all these variables are used
+#  And some of these variables are used
 #    | var | choice | value |
 #    | acknowledged_information_use | user_accepts | true |
 #    | person_answering |  | tenant |
@@ -40,7 +40,7 @@ Since the tests are so long and many scenarios don't conflict, some have been co
 
 Scenario: User has a federal mortgage and a 14 day notice to quit
   Given I start the interview at "eviction"
-  When the target question id is "rental agreement"
+  #When the target question id is "rental agreement"
   And all of these variables are used
     | var | choice | value |
     | acknowledged_information_use | user_accepts | true |
@@ -68,14 +68,14 @@ Scenario: User has a federal mortgage and a 14 day notice to quit
     | eviction_all_reasons | nonpayment | true |
     | covid_cares_has_federal_mortgage |  | true |
     | covid_cdc_moratorium | False | true |
-  When I set the var "facts.tenant_movein" to "01/01/2019"
-  And I set the var "facts.tenant_rent_share" to "1"
-  And I set the var "facts.tenant_rent_frequency" to "month"
-  And I set the var "tenancy_type" to "lease"
-  And I tap to continue
+    | facts.tenant_movein |  | 01/01/2019 |
+    | facts.tenant_rent_share |  | 1 |
+    | facts.tenant_rent_frequency |  | month |
+    | tenancy_type |  | lease |
   And I wait 2 seconds
   When the target question id is "download screen"
-  And all of these variables are used
+  #When the target question id is "nonexistant id"
+  And some of these variables are used
     | notice_type |  | fourteen_day |
     | ntq_includes_tenant_name | True | true |
     | ntq_includes_all_tenants | True | true |
@@ -97,10 +97,10 @@ Scenario: User has a federal mortgage and a 14 day notice to quit
     | signature_choice |  | this device |
     | method_of_service |  | emailed |
     | service_date |  | 01/01/2024 |
-    | var_name_not_supported | | /sign |
+    | | | /sign |
     | ask_intake_questions |  | skip |
 #  Then I download "Eviction_Forms.zip"
-
+#
 #  Then the question id should be "intro screen"
 #  When I set the "user_accepts" choice of var "acknowledged_information_use" to "true"
 #  When I tap to continue

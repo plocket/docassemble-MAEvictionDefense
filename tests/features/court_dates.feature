@@ -40,8 +40,7 @@ Since the tests are so long and many scenarios don't conflict, some have been co
 
 Scenario: User has a federal mortgage and a 14 day notice to quit
   Given I start the interview at "eviction"
-  When the target question id is "download screen"
-  And some of these variables are used
+  And the user gets to "download screen" with this data:
     | var | choice | value |
     | acknowledged_information_use | user_accepts | true |
     | person_answering |  | tenant |

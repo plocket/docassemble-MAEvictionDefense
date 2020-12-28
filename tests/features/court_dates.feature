@@ -40,8 +40,8 @@ Since the tests are so long and many scenarios don't conflict, some have been co
 
 Scenario: User has a federal mortgage and a 14 day notice to quit
   Given I start the interview at "eviction"
-  #When the target question id is "rental agreement"
-  And all of these variables are used
+  When the target question id is "download screen"
+  And some of these variables are used
     | var | choice | value |
     | acknowledged_information_use | user_accepts | true |
     | person_answering |  | tenant |
@@ -72,10 +72,6 @@ Scenario: User has a federal mortgage and a 14 day notice to quit
     | facts.tenant_rent_share |  | 1 |
     | facts.tenant_rent_frequency |  | month |
     | tenancy_type |  | lease |
-  And I wait 2 seconds
-  When the target question id is "download screen"
-  #When the target question id is "nonexistant id"
-  And some of these variables are used
     | notice_type |  | fourteen_day |
     | ntq_includes_tenant_name | True | true |
     | ntq_includes_all_tenants | True | true |
@@ -99,7 +95,7 @@ Scenario: User has a federal mortgage and a 14 day notice to quit
     | service_date |  | 01/01/2024 |
     | | | /sign |
     | ask_intake_questions |  | skip |
-#  Then I download "Eviction_Forms.zip"
+  Then I download "Eviction_Forms.zip"
 #
 #  Then the question id should be "intro screen"
 #  When I set the "user_accepts" choice of var "acknowledged_information_use" to "true"

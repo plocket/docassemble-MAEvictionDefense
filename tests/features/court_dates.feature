@@ -12,15 +12,14 @@ Since the tests are so long and many scenarios don't conflict, some have been co
 - [√] User has a public housing voucher. (Expected: No bugs along the way)
 - [√] User has a delay in receiving RAFT rental assistance which caused to fall behind in rent. (Expected: Causes 2 paragraphs to appear in the answer: RAFT defense should appear on the answer. Relief requested should include a delay in the case until RAFT is completed.)
 
-#Scenario: User's court date has passed
-#  Given I start the interview at "eviction"
-#  When the target question id is "not right interview"
-#  And some of these variables are used
-#    | var | choice | value |
-#    | acknowledged_information_use | user_accepts | true |
-#    | person_answering |  | tenant |
-#    | how_to_answer |  | continue |
-#    | case.status | late | true |
+Scenario: User's court date has passed
+  Given I start the interview at "eviction"
+  And the user gets to "not right interview" with this data:
+    | var | choice | value |
+    | acknowledged_information_use | user_accepts | true |
+    | person_answering |  | tenant |
+    | how_to_answer |  | continue |
+    | case.status | late | true |
 #
 #Scenario: User's court date has passed
 #  Given I start the interview at "eviction"

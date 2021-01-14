@@ -30,7 +30,7 @@
     "bufferutil": "^4.0.1",
     "chai": "^4.2.0",
     "cucumber": "^6.0.5",
-    "docassemble-cucumber": "0.4.67.flex-2",
+    "docassemble-cucumber": "1.1.0-flex-1",
     "dotenv": "^8.2.0",
     "mocha": "^7.2.0",
     "puppeteer": "^3.1.0",
